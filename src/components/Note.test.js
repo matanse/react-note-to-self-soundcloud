@@ -1,13 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import {mount} from 'enzyme';
 import Note from './Note';
-
-const props = { note: { text: 'test_note' } };
+import { Item } from 'react-bootstrap/lib/Breadcrumb';
 
 describe('Note', () => {
-  let note = mount(<Note {...props} />);
+    let note = mount(<Note note={{text: 'test note'}}/>);
 
-  it('renders the note text', () => {
-    expect(note.find('p').text()).toEqual(props.note.text);
-  });
-});
+    It('renders the note text', () => {
+        console.log(note.debug());
+    })
+})
