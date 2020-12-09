@@ -1,0 +1,29 @@
+p {
+    margin: 4px;
+}
+
+body {
+    text-align: center;
+    padding: 4%;
+    background-color: rgba(56, 89, 181, 0.666);
+}
+
+Form Button {
+    background-color: blue;
+}
+
+.notes {
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+.noteRow {
+    border-bottom: 2px dashed white;
+}
+
+.noteRow:last-child {
+    border: none;
+}
+.note {
+    text-align: center;
+}
