@@ -1,13 +1,44 @@
 body {
+  background-color: rgb(186, 131, 37);
   text-align: center;
   padding: 5%;
 }
 
-.note {
-  border: 1px solid lightgray;
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  color: black;
+}
+
+.notes {
+  margin-top: 15px;
+  border: solid 1px black;
   border-radius: 5px;
+}
+
+.note:last-child {
+  border: none;
+}
+
+.noteRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: dashed 1px grey;
   font-style: italic;
-  text-align: left;
   padding: 8px;
-  margin: 30px;
+}
+
+.note {
+  display: inline-flex;
+}
+
+.note p {
+  margin-left: 10%;
+  color: black;
+  font-weight: 500;
+  font-size: 23px;
 }

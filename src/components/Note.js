@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
+import { Checkbox } from 'react-bootstrap';
 
 class Note extends Component {
+  getStyle = () => {
+    return {
+      textDecoration: this.props.note.isComplete ? 'line-through' : 'none'
+    }
+  }
   render() {
+    const { note, deleteNote, markComplete} = this.props
     return (
-      <div className='note'>
-        <p>{this.props.note.text}</p>
+      <div className='noteRow'>
+        <div className='note' style={this.getStyle()}>
+          <Checkbox type='button' onClick={markComplete}/>
+          <p>{note.text}</p>
+        </div>
+        <button type='button' onClick={deleteNote}>X</button>
       </div>
     )
   }
