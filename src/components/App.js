@@ -33,13 +33,6 @@ class App extends Component {
   markComplete = (index) => {
     let { notes } = this.state
     notes[index].isComplete = !notes[index].isComplete
-    const deleteNoteTemp = notes[index]
-    notes.splice(index, 1)
-    if (notes[index].isComplete) {
-      notesDone.push(deleteNoteTemp)
-    } else {
-      notes = [deleteNoteTemp, ...notes]
-    }
     this.setState({ notes })
   }
 
