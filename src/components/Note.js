@@ -12,7 +12,7 @@ class Note extends Component {
     return (
       <div className='noteRow'>
         <div className='note' style={this.getStyle()}>
-          <Checkbox type='button' onClick={markComplete}/>
+          <Checkbox type='button' onChange={markComplete} checked={note.isComplete}/>
           <p>{note.text}</p>
         </div>
         <button type='button' onClick={deleteNote}>X</button>
