@@ -33,6 +33,11 @@ class App extends Component {
   markComplete = (index) => {
     let { notes } = this.state
     notes[index].isComplete = !notes[index].isComplete
+    if (notes[index].isComplete) {
+      notes.push(notes.splice(index, 1)[0])
+    } else {
+      notes = [notes.splice(index, 1)[0], ...notes]
+    }
     this.setState({ notes })
   }
 
