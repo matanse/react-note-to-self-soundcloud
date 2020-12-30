@@ -16,7 +16,8 @@ class App extends Component {
     }
   }
 
-  submitNote() {
+  submitNote = (e) => {
+    e.preventDefault()
     const { notes, text } = this.state;
     notes.push({ text, isComplete: false });
     this.setState({ notes });
@@ -25,15 +26,14 @@ class App extends Component {
 
   deleteNote = (index) => {
     let notes = this.state.notes
-    console.log(notes[index])
     notes.splice(index, 1)
     this.setState({notes: notes})
   }
 
   markComplete = (index) => {
-    let notes = this.state.notes
+    let { notes } = this.state
     notes[index].isComplete = !notes[index].isComplete
-    this.setState({notes: notes})
+    this.setState({ notes })
   }
 
   clearNotes(){
@@ -49,10 +49,10 @@ class App extends Component {
     return (
       <div>
         <h2>Notes</h2>
-        <Form inline>
+        <Form inline onSubmit={(e) => this.submitNote(e)}>
           <FormControl onChange={event => this.setState({ text: event.target.value }) } />
           {' '}
-          <Button onClick={() => this.submitNote()}>submit</Button>
+          <Button type="submit">submit</Button>
         </Form>
         <div className='notes'>
           {
